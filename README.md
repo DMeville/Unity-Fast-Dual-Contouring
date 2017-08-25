@@ -6,7 +6,6 @@ Instead of porting my own code I grabbed [nickgildea's code from github](https:/
 
 Still has  a few things I need to figure out like if I'm leaking memory the way I'm sending the generated mesh data to Unity, and why the mesh simplification doesn't seem to be working, but I'm not familiar with C++ much at all so I'm sort of stumbling around..
 
-If anyone wants to give it a look I put my code on github here: Code is available here - https://github.com/DMeville/Unity-Fast-Dual-Contouring
 
 Feel free to suggest changes or fixes to the code, I don't know how to C++ well so it's probably terrible!
 
