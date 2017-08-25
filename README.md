@@ -9,5 +9,7 @@ Still has  a few things I need to figure out like if I'm leaking memory the way 
 
 Feel free to suggest changes or fixes to the code, I don't know how to C++ well so it's probably terrible!
 
+Video of it in action: https://www.youtube.com/watch?v=fAXttypzvIw
+
 @DMeville
 I have no idea what I'm doing.
