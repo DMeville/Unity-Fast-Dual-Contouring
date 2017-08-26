@@ -123,7 +123,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &758918710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,6 +140,12 @@ MonoBehaviour:
   pos: {x: 0, y: 0, z: 0}
   startTime: 1
   fastDC: 1
+  maxSimplifyIterations: 0
+  targetPolygonPercent: 1
+  edgeFraction: 0.2
+  maxEdgeLength: 0.8
+  maxError: 1
+  minAngleCosine: 1
 --- !u!4 &758918711
 Transform:
   m_ObjectHideFlags: 0
@@ -151,7 +157,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1181985293
 GameObject:
@@ -240,7 +246,7 @@ RectTransform:
   m_Children:
   - {fileID: 1990093266}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -307,7 +313,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1603597878
 GameObject:
@@ -388,59 +394,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &1794381637
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1794381639}
-  - component: {fileID: 1794381638}
-  m_Layer: 0
-  m_Name: DCC2 (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1794381638
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1794381637}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e68877f6f8c51f94084052bcc5ace4ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  volumeSize: 16
-  subdivisionLevel: 6
-  drawCells: 0
-  drawCorners: 0
-  drawEdges: 0
-  drawEdgeIntersections: 0
-  drawEdgeNormals: 0
-  drawVerts: 0
-  drawVertNormals: 0
-  vertScale: 0.8
-  normalsScale: 0.2
-  sphereRadius: 4.27
-  doAutoUpdate: 0
---- !u!4 &1794381639
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1794381637}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1889289923
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,6 +602,12 @@ MonoBehaviour:
   pos: {x: 0, y: 0, z: 0}
   startTime: 1
   fastDC: 0
+  maxSimplifyIterations: 10
+  targetPolygonPercent: 1
+  edgeFraction: 0.125
+  maxEdgeLength: 0.5
+  maxError: 1
+  minAngleCosine: 0.8
 --- !u!4 &2042716364
 Transform:
   m_ObjectHideFlags: 0
@@ -660,5 +619,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

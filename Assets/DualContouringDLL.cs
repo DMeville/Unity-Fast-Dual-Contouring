@@ -13,7 +13,7 @@ public class DualContouringDLL : MonoBehaviour {
 
 
     [DllImport("DualContouringPlugin", EntryPoint = "FastDualContour")]
-    public static extern void FastDualContourDLL(int x, int y, int z, int cellSize, float targetPolygonPercent, out int indiciesLength, out IntPtr indiciesArray, out int vertexBufferLength, out IntPtr vertexBufferArray);
+    public static extern void FastDualContourDLL(int x, int y, int z, int cellSize, float targetPolygonPercent, int maxSimplifyIterations, float edgeFraction, float maxEdgeLength, float maxError, float minAngleCosine, out float debugVal, out float debugVal2, out int indiciesLength, out IntPtr indiciesArray, out int vertexBufferLength, out IntPtr vertexBufferArray);
 
 
     public float res = 0f;
@@ -26,6 +26,14 @@ public class DualContouringDLL : MonoBehaviour {
     public float startTime = 1f;
 
     public bool fastDC = false;
+
+    [Header("Simplify Options")]
+    public int maxSimplifyIterations = 10;
+    public float targetPolygonPercent = 1f;
+    public float edgeFraction = 0.125f;
+    public float maxEdgeLength = 0.5f;
+    public float maxError = 1.0f;
+    public float minAngleCosine = 0.8f;
 
     void Start () {
         if(fastDC) StartFastDC();
@@ -45,7 +53,7 @@ public class DualContouringDLL : MonoBehaviour {
     /// starts the Fast DC in a thread and generates a mesh
     /// </summary>
     public void StartFastDC() {
-        generationThread = new Thread(() => { FastDualContour((int)pos.x, (int)pos.y, (int)pos.z, 64, 100f); });
+        generationThread = new Thread(() => { FastDualContour((int)pos.x, (int)pos.y, (int)pos.z, 64, targetPolygonPercent, maxSimplifyIterations, edgeFraction, maxEdgeLength, maxError, minAngleCosine); });
         generationThread.Start();
     }
 
@@ -58,14 +66,15 @@ public class DualContouringDLL : MonoBehaviour {
     /// cell size works.  Cell size is how many voxels you create on every axis.  first cell starts at center - cellSize/2.  Cells are always 1m I think, might be good to make a way to increase res
     /// targetPolygonPercent does not work.  Not sure why..
     /// </summary>
-    public void FastDualContour(int x, int y, int z, int cellSize, float targetPolygonPercent) {
+    public void FastDualContour(int x, int y, int z, int cellSize, float targetPolygonPercent, int maxSimplifyIterations, float edgeFraction, float maxEdgeLength, float maxError, float minAngleCosine) {
         int indiciesLength;
         IntPtr indiciesArrayPtr;
 
         int vertexBufferLength;
         IntPtr vertexBufferArrayPtr;
-        
-        FastDualContourDLL(x, y, z, cellSize, targetPolygonPercent, out indiciesLength, out indiciesArrayPtr, out vertexBufferLength, out vertexBufferArrayPtr);
+        float debugVal = 0;
+        float debugVal2 = 0;
+        FastDualContourDLL(x, y, z, cellSize, targetPolygonPercent, maxSimplifyIterations, edgeFraction, maxEdgeLength, maxError, minAngleCosine, out debugVal, out debugVal2, out indiciesLength, out indiciesArrayPtr, out vertexBufferLength, out vertexBufferArrayPtr);
         int[] indiciesArray = new int[indiciesLength];
         float[] vertexBufferArray = new float[vertexBufferLength];
         //Debug.Log(vertexBufferLength);
@@ -75,8 +84,8 @@ public class DualContouringDLL : MonoBehaviour {
         Marshal.Copy(vertexBufferArrayPtr, vertexBufferArray, 0, vertexBufferLength);
         Marshal.FreeCoTaskMem(vertexBufferArrayPtr);
 
-        //Debug.Log(string.Format("{0}-{1}", indiciesLength, vertexBufferLength));
         mainThreadCallbacks.Add(() => { BuildMesh(vertexBufferArray, indiciesArray); });
+        Debug.Log(string.Format("{0} - {1}", debugVal, debugVal2));
     }
 
   
@@ -134,11 +143,21 @@ public class DualContouringDLL : MonoBehaviour {
             //Debug.Log("i: " + i);
             verts.Add(new Vector3(vertexArray[i], vertexArray[i + 1], vertexArray[i + 2]));
             norms.Add(new Vector3(vertexArray[i + 3], vertexArray[i + 4], vertexArray[i + 5]));
+            Debug.Log(string.Format("{0} - {1} - {2}", vertexArray[i], vertexArray[i + 1], vertexArray[i + 2]));
+            //Debug.Log(string.Format("{0} - {1} - {2}", vertexArray[i + 3], vertexArray[i + 4], vertexArray[i + 5]));
         }
+
+
+        Debug.Log(string.Format("verts - {0}", verts.Count)); //always returns 8043, doesn't matter what the simplification options are
 
         mf.mesh.vertices = verts.ToArray();
         mf.mesh.normals = norms.ToArray();
         mf.mesh.triangles = indiciesArray;
+        mf.mesh.RecalculateNormals(); //just do this for now...
+
+        //for(int i = 0; i < norms.Count; i++) {
+        //    Debug.Log(string.Format("normal[{0}] - {1}", i, norms[i].ToString()));
+        //}
 
         UIConsole.instance.AddText(("\n[" + count + "] - time since startup - " + Time.realtimeSinceStartup));
         count++;

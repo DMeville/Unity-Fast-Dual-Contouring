@@ -1,0 +1,17 @@
+﻿  fast_dc.cpp
+  DualContouringPlugin.cpp
+c:\users\dylan\documents\github\unitydualcontouringplugin\c++source\dualcontouringplugin\dualcontouringplugin\DualContouringPlugin.h(7): warning C4005: 'EXPORT': macro redefinition
+  c:\users\dylan\documents\github\unitydualcontouringplugin\c++source\dualcontouringplugin\dualcontouringplugin\DualContouringPlugin.h(4): note: see previous definition of 'EXPORT'
+DualContouringPlugin.cpp(23): warning C4267: '=': conversion from 'size_t' to 'long', possible loss of data
+DualContouringPlugin.cpp(28): warning C4267: '=': conversion from 'size_t' to 'long', possible loss of data
+DualContouringPlugin.cpp(90): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+DualContouringPlugin.cpp(125): warning C4267: '=': conversion from 'size_t' to 'long', possible loss of data
+DualContouringPlugin.cpp(130): warning C4267: '=': conversion from 'size_t' to 'long', possible loss of data
+     Creating library C:\Users\Dylan\Documents\github\UnityDualContouringPlugin\C++Source\DualContouringPlugin\x64\Release\DualContouringPlugin.lib and object C:\Users\Dylan\Documents\github\UnityDualContouringPlugin\C++Source\DualContouringPlugin\x64\Release\DualContouringPlugin.exp
+  Generating code
+  49 of 1361 functions ( 3.6%) were compiled, the rest were copied from previous compilation.
+    2 functions were new in current compilation
+    9 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  DualContouringPlugin.vcxproj -> C:\Users\Dylan\Documents\github\UnityDualContouringPlugin\C++Source\DualContouringPlugin\x64\Release\DualContouringPlugin.dll
+  DualContouringPlugin.vcxproj -> C:\Users\Dylan\Documents\github\UnityDualContouringPlugin\C++Source\DualContouringPlugin\x64\Release\DualContouringPlugin.pdb (Full PDB)

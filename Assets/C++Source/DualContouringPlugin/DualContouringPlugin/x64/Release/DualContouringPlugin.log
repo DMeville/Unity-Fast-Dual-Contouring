@@ -1,9 +1,0 @@
-﻿  fast_dc.cpp
-     Creating library c:\users\dylan\documents\visual studio 2015\Projects\DualContouringPlugin\x64\Release\DualContouringPlugin.lib and object c:\users\dylan\documents\visual studio 2015\Projects\DualContouringPlugin\x64\Release\DualContouringPlugin.exp
-  Generating code
-  47 of 1361 functions ( 3.5%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    10 functions had inline decision re-evaluated but remain unchanged
-  Finished generating code
-  DualContouringPlugin.vcxproj -> c:\users\dylan\documents\visual studio 2015\Projects\DualContouringPlugin\x64\Release\DualContouringPlugin.dll
-  DualContouringPlugin.vcxproj -> c:\users\dylan\documents\visual studio 2015\Projects\DualContouringPlugin\x64\Release\DualContouringPlugin.pdb (Full PDB)
