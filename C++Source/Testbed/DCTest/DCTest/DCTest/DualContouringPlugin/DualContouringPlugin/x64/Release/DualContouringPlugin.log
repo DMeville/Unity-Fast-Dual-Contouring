@@ -1,0 +1,10 @@
+﻿  octree.cpp
+octree.cpp(240): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+     Creating library C:\Users\Dylan\Documents\github\UnityDualContouringPlugin\C++Source\Testbed\DCTest\DCTest\DCTest\DualContouringPlugin\x64\Release\DualContouringPlugin.lib and object C:\Users\Dylan\Documents\github\UnityDualContouringPlugin\C++Source\Testbed\DCTest\DCTest\DCTest\DualContouringPlugin\x64\Release\DualContouringPlugin.exp
+  Generating code
+  50 of 1201 functions ( 4.2%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    7 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  DualContouringPlugin.vcxproj -> C:\Users\Dylan\Documents\github\UnityDualContouringPlugin\C++Source\Testbed\DCTest\DCTest\DCTest\DualContouringPlugin\x64\Release\DualContouringPlugin.dll
+  DualContouringPlugin.vcxproj -> C:\Users\Dylan\Documents\github\UnityDualContouringPlugin\C++Source\Testbed\DCTest\DCTest\DCTest\DualContouringPlugin\x64\Release\DualContouringPlugin.pdb (Full PDB)

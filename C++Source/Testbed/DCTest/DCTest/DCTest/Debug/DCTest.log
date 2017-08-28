@@ -1,0 +1,12 @@
+﻿  DualContouringPlugin.cpp
+c:\users\dylan\documents\github\unitydualcontouringplugin\c++source\testbed\dctest\dctest\dctest\dualcontouringplugin\dualcontouringplugin\dualcontouringplugin.h(7): warning C4005: 'EXPORT': macro redefinition
+  c:\users\dylan\documents\github\unitydualcontouringplugin\c++source\testbed\dctest\dctest\dctest\dualcontouringplugin\dualcontouringplugin\dualcontouringplugin.h(4): note: see previous definition of 'EXPORT'
+c:\users\dylan\documents\github\unitydualcontouringplugin\c++source\testbed\dctest\dctest\dctest\dualcontouringplugin\dualcontouringplugin\dualcontouringplugin.cpp(186): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
+  Compiling...
+  fast_dc.cpp
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  ng_mesh_simplify.cpp
+  DCTest.vcxproj -> C:\Users\Dylan\Documents\github\UnityDualContouringPlugin\C++Source\Testbed\DCTest\DCTest\Debug\DCTest.exe
+  DCTest.vcxproj -> C:\Users\Dylan\Documents\github\UnityDualContouringPlugin\C++Source\Testbed\DCTest\DCTest\Debug\DCTest.pdb (Full PDB)
