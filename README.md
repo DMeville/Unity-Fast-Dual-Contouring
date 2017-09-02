@@ -1,3 +1,5 @@
+This code is half broken!
+
 I've been playing around with generating meshes from noise data for about the last week, after trying multiple unity assets and not being satisfied with the results, thought I'd see if I could get DC working quickly.  I'm hoping to be able to use this as a base to generate procedural terrains.  I don't require the terrains to be modifiable at runtime, but I would like to be able to swap between mesh LoD at will.
 
 Anyways, after reading the paper, and taking a look at the C# port of nickgildeas code here https://github.com/tuckbone/DualContouringCSharp helped me understand.  I tried to implement DC using a normal voxel grid instead of an octree and it worked decently well, but it was dreadfully slow.  Decided it would be fun to see about getting it to run as a C++ plugin..
